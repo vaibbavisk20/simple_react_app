@@ -8,5 +8,6 @@ jobs:
       - uses: actions/checkout@v4
       - id: foo
         uses: vaibbavisk20/hello-world-composite-action@v5
+      - shell: bash
         # with:
           # who-to-greet: 'Mona the Octocat'
