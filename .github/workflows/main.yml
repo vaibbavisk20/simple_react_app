@@ -1,13 +1,17 @@
-on: [push]
+name: 'My Workflow'
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  hello_world_job:
+  example_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+
     steps:
-      - uses: actions/checkout@v4
-      - id: foo
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Print Message Action
         uses: vaibbavisk20/hello-world-composite-action@v5
-      - shell: bash
-        # with:
-          # who-to-greet: 'Mona the Octocat'
