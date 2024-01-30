@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run Print Message Action
-        uses: vaibbavisk20/hello-world-composite-action@v6
+        uses: vaibbavisk20/hello-world-composite-action@v7
