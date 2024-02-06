@@ -1,12 +1,31 @@
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
 
+permissions:
+  id-token: write
+  contents: read
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Job to run custom action
+    environment:
+     name: staging.azure
     steps:
-      - uses: actions/checkout@v4
-      - id: foo
-        uses: vaibbavisk20/hello-world-composite-action@v5
-        # with:
-          # who-to-greet: 'Mona the Octocat'
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Deploy word press to azure app service
+        uses: ./ # Uses an action in the root directory
+        id: deploy
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resource-group-name: ${{ secrets.AZURE_RG }}
