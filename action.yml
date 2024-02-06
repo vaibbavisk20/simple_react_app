@@ -36,6 +36,6 @@ runs:
       with:
         subscriptionId: ${{ inputs.subscription-id }}
         resourceGroupName: ${{ inputs.resource-group-name }}
-        template: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/b41b420ccb55ff45a032b83b2f85e65d6fa16aae/application-workloads/wordpress/wordpress-app-service-mysql-inapp/azuredeploy.json
-        parameters: https://raw.githubusercontent.com/Azure/azure-quickstart-templates/b41b420ccb55ff45a032b83b2f85e65d6fa16aae/application-workloads/wordpress/wordpress-app-service-mysql-inapp/azuredeploy.parameters.json
+        template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
+        parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
         failOnStdErr: false
