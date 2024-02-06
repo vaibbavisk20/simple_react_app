@@ -6,10 +6,10 @@
             "value": "westus2"
         },
         "networkInterfaceName1": {
-            "value": "action-vm531_z1"
+            "value": "action-lamp-vm681_z1"
         },
         "networkSecurityGroupName": {
-            "value": "action-vm-nsg"
+            "value": "action-lamp-vm-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -63,11 +63,26 @@
         "subnetName": {
             "value": "default"
         },
-        "virtualNetworkId": {
-            "value": "/subscriptions/70da9a3e-d855-4335-9a93-924c8c8ba39a/resourceGroups/vsk-playground-rg/providers/Microsoft.Network/virtualNetworks/vm-2-vnet"
+        "virtualNetworkName": {
+            "value": "action-lamp-vm-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.0.0.0/16"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.0.0.0/24"
+                    }
+                }
+            ]
         },
         "publicIpAddressName1": {
-            "value": "action-vm-ip"
+            "value": "action-lamp-vm-ip"
         },
         "publicIpAddressType": {
             "value": "Static"
@@ -79,16 +94,16 @@
             "value": "Detach"
         },
         "virtualMachineName": {
-            "value": "action-vm"
+            "value": "action-lamp-vm"
         },
         "virtualMachineName1": {
-            "value": "action-vm"
+            "value": "action-lamp-vm"
         },
         "virtualMachineComputerName1": {
-            "value": "action-vm"
+            "value": "action-lamp-vm"
         },
         "virtualMachineRG": {
-            "value": "vsk-playground-rg"
+            "value": "action-rg"
         },
         "osDiskType": {
             "value": "Premium_LRS"
@@ -97,7 +112,7 @@
             "value": "Delete"
         },
         "virtualMachineSize": {
-            "value": "Standard_B1s"
+            "value": "Standard_D2as_v4"
         },
         "nicDeleteOption": {
             "value": "Detach"
@@ -113,6 +128,21 @@
         },
         "virtualMachine1Zone": {
             "value": "1"
+        },
+        "autoShutdownStatus": {
+            "value": "Enabled"
+        },
+        "autoShutdownTime": {
+            "value": "19:00"
+        },
+        "autoShutdownTimeZone": {
+            "value": "UTC"
+        },
+        "autoShutdownNotificationStatus": {
+            "value": "Disabled"
+        },
+        "autoShutdownNotificationLocale": {
+            "value": "en"
         }
     }
 }
