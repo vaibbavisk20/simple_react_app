@@ -34,8 +34,8 @@ runs:
     - name: 'Az deploy - wordpress on app svc'
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: '9992ee4c-bf90-4d14-9ebe-08efa6dce299'
-        resourceGroupName: 'action-rg'
+        subscriptionId: 9992ee4c-bf90-4d14-9ebe-08efa6dce299
+        resourceGroupName: action-rg
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
         failOnStdErr: false
