@@ -16,6 +16,9 @@ inputs:
   resource-group-name:
     description: 'Resource group to deploy your resources to'
     required: true
+  clientSecret:
+    decription: 'App secret to login to azure'
+    required: true
 #runs:
   # using: 'node20'
   # main: 'dist/index.js'
@@ -30,6 +33,7 @@ runs:
         client-id: ${{ inputs.client-id }}
         tenant-id: ${{ inputs.tenant-id }}
         subscription-id: ${{ inputs.subscription-id }}
+        clientSecret: ${{ inputs.clientSecret }}
         enable-AzPSSession: false
     - name: 'Az deploy - wordpress on app svc'
       uses: azure/arm-deploy@v1
