@@ -33,7 +33,8 @@ runs:
         client-id: ${{ inputs.client-id }}
         tenant-id: ${{ inputs.tenant-id }}
         subscription-id: ${{ inputs.subscription-id }}
-        auth-type: IDENTITY
+        # auth-type: IDENTITY
+        clientSecret: ${{ inputs.clientSecret }}
         enable-AzPSSession: false
     - name: 'Az deploy - wordpress on app svc'
       uses: azure/arm-deploy@v1
