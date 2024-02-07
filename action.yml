@@ -35,7 +35,7 @@ jobs:
     - name: 'List Resource Groups'
       shell: bash
       run: |
-        az group list --query "[].name" --output table
+          az group list --subscription ${{ inputs.subscription-id }} --query "[].name" --output table
 
     - name: 'Az deploy - WordPress on App Service'
       uses: azure/arm-deploy@v1
