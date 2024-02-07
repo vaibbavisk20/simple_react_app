@@ -6,7 +6,7 @@
             "value": "westus2"
         },
         "networkInterfaceName1": {
-            "value": "testing-github-vm-2900_z1"
+            "value": "testing-github-vm-2735_z1"
         },
         "networkSecurityGroupName": {
             "value": "testing-github-vm-2-nsg"
@@ -106,10 +106,10 @@
             "value": false
         },
         "adminUsername": {
-            "value": "vaibbavisk"
+            "value": "azureuser"
         },
-        "adminPassword": {
-            "value": "Testing12345"
+        "adminPublicKey": {
+            "value": null
         },
         "virtualMachine1Zone": {
             "value": "1"
