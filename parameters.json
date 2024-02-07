@@ -6,10 +6,10 @@
             "value": "westus2"
         },
         "networkInterfaceName1": {
-            "value": "action-lamp-vm681_z1"
+            "value": "testing-vm-github934_z1"
         },
         "networkSecurityGroupName": {
-            "value": "action-lamp-vm-nsg"
+            "value": "testing-vm-github-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -64,7 +64,7 @@
             "value": "default"
         },
         "virtualNetworkName": {
-            "value": "action-lamp-vm-vnet"
+            "value": "testing-vm-github-vnet"
         },
         "addressPrefixes": {
             "value": [
@@ -82,7 +82,7 @@
             ]
         },
         "publicIpAddressName1": {
-            "value": "action-lamp-vm-ip"
+            "value": "testing-vm-github-ip"
         },
         "publicIpAddressType": {
             "value": "Static"
@@ -94,13 +94,13 @@
             "value": "Detach"
         },
         "virtualMachineName": {
-            "value": "action-lamp-vm"
+            "value": "testing-vm-github"
         },
         "virtualMachineName1": {
-            "value": "action-lamp-vm"
+            "value": "testing-vm-github"
         },
         "virtualMachineComputerName1": {
-            "value": "action-lamp-vm"
+            "value": "testing-vm-github"
         },
         "virtualMachineRG": {
             "value": "action-rg"
@@ -121,10 +121,7 @@
             "value": false
         },
         "adminUsername": {
-            "value": "vaibbavisk"
-        },
-        "adminPassword": {
-            "value": "Testing12345"
+            "value": "azureuser"
         },
         "virtualMachine1Zone": {
             "value": "1"
