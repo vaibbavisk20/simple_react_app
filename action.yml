@@ -32,6 +32,7 @@ runs:
       with:
         creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
     - name: 'List Resources'
+      shell: bash
       run: |
         az resource list --subscription ${{ inputs.subscription-id }} --output table
     - name: 'Az deploy - wordpress on app svc'
