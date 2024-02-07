@@ -32,6 +32,7 @@ runs:
       with:
         creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
     - name: 'List Resource Groups'
+      shell: bash
       run: |
         az group list --query "[].name" --output table
     - name: 'Az deploy - wordpress on app svc'
