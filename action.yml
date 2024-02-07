@@ -34,7 +34,7 @@ runs:
     - name: 'List Resources'
       shell: bash
       run: |
-        az resource list --subscription ${{ inputs.subscription-id }} --output table
+        az group list --subscription ${{ inputs.subscription-id }} --query "[].name" --output table
     - name: 'Az deploy - wordpress on app svc'
       uses: azure/arm-deploy@v1
       with:
