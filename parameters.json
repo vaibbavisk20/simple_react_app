@@ -109,7 +109,7 @@
             "value": "azureuser"
         },
         "adminPublicKey": {
-            "value": null
+            "value": ${{ secrets.ADMIN_PUBLIC_KEY }}
         },
         "virtualMachine1Zone": {
             "value": "1"
