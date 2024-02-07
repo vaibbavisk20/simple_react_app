@@ -35,8 +35,8 @@ runs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ inputs.subscription-id }}
-        # resourceGroupName: ${{ inputs.resource-group-name }}
-        scope: 'subscription'
+        resourceGroupName: ${{ inputs.resource-group-name }}
+        # scope: 'subscription'
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
         failOnStdErr: true
