@@ -109,7 +109,7 @@
             "value": "vaibbavisk"
         },
         "adminPassword": {
-            "value": null
+            "value": "Testing12345"
         },
         "virtualMachine1Zone": {
             "value": "1"
