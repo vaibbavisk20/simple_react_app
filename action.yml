@@ -37,6 +37,7 @@ runs:
         subscriptionId: ${{ inputs.subscription-id }}
         # resourceGroupName: ${{ inputs.resource-group-name }}
         scope: 'subscription'
+        region: 'westus2'
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
         failOnStdErr: true
