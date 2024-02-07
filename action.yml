@@ -33,7 +33,7 @@ runs:
         creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
     - name: 'Create Resource Group'
       run: |
-        az group create --subscription ${{ inputs.subscription-id }} --name ${{ inputs.resource-group-name }} --location ${{ inputs.location }}
+        az group create --subscription ${{ inputs.subscription-id }} --name ${{ inputs.resource-group-name }} --location 'westus2'
       shell: bash
     - name: 'List Resources'
       shell: bash
