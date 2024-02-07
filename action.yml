@@ -38,4 +38,4 @@ runs:
         resourceGroupName: action-rg
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
-        failOnStdErr: false
+        failOnStdErr: true
