@@ -6,7 +6,7 @@
             "value": "westus2"
         },
         "networkInterfaceName1": {
-            "value": "testing-github-vm-2735_z1"
+            "value": "testing-github-vm-243_z1"
         },
         "networkSecurityGroupName": {
             "value": "testing-github-vm-2-nsg"
@@ -106,11 +106,15 @@
             "value": false
         },
         "adminUsername": {
-            "value": "azureuser"
+            "value": "vaibbavisk"
         },
-        "adminPublicKey": {
-            "value": null
-        },
+        "adminPassword": {
+          "reference": {
+            "keyVault": {
+              "id": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.KeyVault/vaults/keyvault-template"
+            },
+            "secretName": "adminPassword"
+          },
         "virtualMachine1Zone": {
             "value": "1"
         },
