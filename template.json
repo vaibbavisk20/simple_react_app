@@ -3,15 +3,15 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "virtualMachines_testing_vm_name": {
-            "defaultValue": "testing-vm",
+            "defaultValue": "testing-vm-1",
             "type": "String"
         },
         "disks_testing_vm_OsDisk_1_ef462cc4756d4878b9f0fe1652ca4b99_externalid": {
-            "defaultValue": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.Compute/disks/testing-vm_OsDisk_1_ef462cc4756d4878b9f0fe1652ca4b99",
+            "defaultValue": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.Compute/disks/testing-vm-1_OsDisk_1_ef462cc4756d4878b9f0fe1652ca4b99",
             "type": "String"
         },
         "networkInterfaces_testing_vm281_z1_externalid": {
-            "defaultValue": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.Network/networkInterfaces/testing-vm281_z1",
+            "defaultValue": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.Network/networkInterfaces/testing-vm-1281_z1",
             "type": "String"
         }
     },
