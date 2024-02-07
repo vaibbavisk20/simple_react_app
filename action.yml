@@ -31,6 +31,9 @@ runs:
       uses: azure/login@v1
       with:
         creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
+    - name: 'List Resource Groups'
+      run: |
+        az group list --query "[].name" --output table
     - name: 'Az deploy - wordpress on app svc'
       uses: azure/arm-deploy@v1
       with:
