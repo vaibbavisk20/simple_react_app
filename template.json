@@ -68,9 +68,6 @@
         "adminUsername": {
             "type": "string"
         },
-        "adminPassword": {
-            "type": "secureString"
-        },
         "virtualMachine1Zone": {
             "type": "string"
         },
@@ -209,11 +206,8 @@
                 "osProfile": {
                     "computerName": "[parameters('virtualMachineComputerName1')]",
                     "adminUsername": "[parameters('adminUsername')]",
-                    "adminPassword": "[parameters('adminPassword')]",
                     "linuxConfiguration": {
-                        "patchSettings": {
-                            "patchMode": "ImageDefault"
-                        }
+                        "disablePasswordAuthentication": true
                     }
                 },
                 "diagnosticsProfile": {
