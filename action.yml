@@ -19,30 +19,29 @@ inputs:
   clientSecret:
     decription: 'App secret to login to azure'
     required: true
-#runs:
-  # using: 'node20'
-  # main: 'dist/index.js'
-runs:
-  using: 'composite'
-  steps:
+jobs:
+  deployWordPress:
+    runs-on: ubuntu-latest
+
+    steps:
     - name: 'Checkout master'
       uses: actions/checkout@v3
-    - name: 'az cli login'
+
+    - name: 'Azure CLI Login'
       uses: azure/login@v1
       with:
         creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
+
     - name: 'List Resource Groups'
       shell: bash
       run: |
         az group list --query "[].name" --output table
-    - name: 'Az deploy - wordpress on app svc'
+
+    - name: 'Az deploy - WordPress on App Service'
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: '9992ee4c-bf90-4d14-9ebe-08efa6dce299'
-        # resourceGroupName: ${{ inputs.resource-group-name }}
-        resourceGroupName: 'action-rg'
-        # scope: 'subscription'
-        # region: 'westus2'
+        subscriptionId: '${{ inputs.subscription-id }}'
+        resourceGroupName: '${{ inputs.resource-group-name }}'
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
         failOnStdErr: true
