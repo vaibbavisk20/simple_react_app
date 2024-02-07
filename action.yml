@@ -34,10 +34,11 @@ runs:
     - name: 'Az deploy - wordpress on app svc'
       uses: azure/arm-deploy@v1
       with:
-        subscriptionId: ${{ inputs.subscription-id }}
+        subscriptionId: '9992ee4c-bf90-4d14-9ebe-08efa6dce299'
         # resourceGroupName: ${{ inputs.resource-group-name }}
-        scope: 'subscription'
-        region: 'westus2'
+        resourceGroupName: 'action-rg'
+        # scope: 'subscription'
+        # region: 'westus2'
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
         failOnStdErr: true
