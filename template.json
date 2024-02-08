@@ -63,7 +63,7 @@
             "type": "string"
         },
         "adminPassword": {
-            "type": "secureString"
+            "type": "string"
         },
         "virtualMachine1Zone": {
             "type": "string"
