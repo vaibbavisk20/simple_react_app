@@ -109,12 +109,8 @@
             "value": "vaibbavisk"
         },
         "adminPassword": {
-          "reference": {
-            "keyVault": {
-              "id": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.KeyVault/vaults/keyvault-template"
-            },
-            "secretName": "adminPassword"
-          },
+          "value": "Testing12345"
+        },
         "virtualMachine1Zone": {
             "value": "1"
         },
