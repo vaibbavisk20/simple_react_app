@@ -16,6 +16,12 @@ inputs:
   resource-group-name:
     description: 'Resource group to deploy your resources to'
     required: true
+  admin-username:
+    description: 'Admin username to login to vm'
+    required: true
+  admin-password:
+    description: 'Admin password to login to vm'
+    required: true
 #runs:
   # using: 'node20'
   # main: 'dist/index.js'
@@ -51,4 +57,6 @@ runs:
         resourceGroupName: ${{ inputs.resource-group-name }}
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
+        parameters: adminUsername=${{ secrets.ADMIN_USERNAME }}
+                    adminPassword=${{ secrets.ADMIN_PASSWORD }}
         failOnStdErr: false
