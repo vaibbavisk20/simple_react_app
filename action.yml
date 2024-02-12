@@ -1,5 +1,5 @@
-name: 'Deploy word press to app service action'
-description: 'Greet someone and record the time'
+name: 'Deploy a LAMP VM to Azure action'
+description: 'This action helps deploy LAMP stack on an azure VM'
 branding:
   icon: 'play-circle'
   color: 'blue'
@@ -24,14 +24,6 @@ runs:
   steps:
     - name: 'Checkout master'
       uses: actions/checkout@v3
-    # - name: 'az cli login'
-    #   uses: azure/login@v1
-    #   with:
-    #     creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
-    # - name: 'Create Resource Group'
-    #   run: |
-    #     az group create --subscription ${{ inputs.subscription-id }} --name ${{ inputs.resource-group-name }} --location 'westus2'
-    #   shell: bash
     - name: az cli login
       uses: azure/login@v1
       with:
