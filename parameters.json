@@ -6,10 +6,10 @@
             "value": "westus2"
         },
         "networkInterfaceName1": {
-            "value": "testing-github-vm-3671_z1"
+            "value": "final-deploy-vm-k503_z1"
         },
         "networkSecurityGroupName": {
-            "value": "testing-github-vm-3-nsg"
+            "value": "final-deploy-vm-k-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -67,7 +67,7 @@
             "value": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.Network/virtualNetworks/testing-vm-github-vnet"
         },
         "publicIpAddressName1": {
-            "value": "testing-github-vm-3-ip"
+            "value": "final-deploy-vm-k-ip"
         },
         "publicIpAddressType": {
             "value": "Static"
@@ -79,13 +79,13 @@
             "value": "Detach"
         },
         "virtualMachineName": {
-            "value": "testing-github-vm-3"
+            "value": "final-deploy-vm-k"
         },
         "virtualMachineName1": {
-            "value": "testing-github-vm-3"
+            "value": "final-deploy-vm-k"
         },
         "virtualMachineComputerName1": {
-            "value": "testing-github-vm-3"
+            "value": "final-deploy-vm-k"
         },
         "virtualMachineRG": {
             "value": "action-rg"
