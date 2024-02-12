@@ -16,9 +16,6 @@ inputs:
   resource-group-name:
     description: 'Resource group to deploy your resources to'
     required: true
-  clientSecret:
-    decription: 'App secret to login to azure'
-    required: true
 #runs:
   # using: 'node20'
   # main: 'dist/index.js'
