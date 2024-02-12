@@ -49,6 +49,6 @@ runs:
         resourceGroupName: ${{ inputs.resource-group-name }}
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
-                    adminUsername=${{ secrets.ADMIN_USERNAME }}
-                    adminPassword=${{ secrets.ADMIN_PASSWORD }}
+                    adminUsername=${{ inputs.admin-username }}
+                    adminPassword=${{ inputs.admin-password }}
         failOnStdErr: false
