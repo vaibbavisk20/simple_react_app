@@ -27,24 +27,31 @@ runs:
   steps:
     - name: 'Checkout master'
       uses: actions/checkout@v3
-    - name: 'az cli login'
-      uses: azure/login@v1
-      with:
-        creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
+    # - name: 'az cli login'
+    #   uses: azure/login@v1
+    #   with:
+    #     creds: '{"clientId":"${{ inputs.client-id }}","clientSecret":"${{ inputs.clientSecret }}","subscriptionId":"${{ inputs.subscription-id }}","tenantId":"${{ inputs.tenant-id }}"}'
     # - name: 'Create Resource Group'
     #   run: |
     #     az group create --subscription ${{ inputs.subscription-id }} --name ${{ inputs.resource-group-name }} --location 'westus2'
     #   shell: bash
+    - name: az cli login
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        enable-AzPSSession: false
+
     - name: 'List Resources'
       shell: bash
       run: |
         az group list --subscription ${{ inputs.subscription-id }} --query "[].name" --output table
-    - name: 'Az deploy - wordpress on app svc'
+    - name: 'Az deploy - lamp vm bitnami'
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ inputs.subscription-id }}
         resourceGroupName: ${{ inputs.resource-group-name }}
-        # scope: 'subscription'
         template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
         parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
-        failOnStdErr: true
+        failOnStdErr: false
