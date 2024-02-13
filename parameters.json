@@ -6,10 +6,10 @@
             "value": "westus2"
         },
         "networkInterfaceName1": {
-            "value": "rfzswfsr371_z1"
+            "value": "testing-vm-123338_z1"
         },
         "networkSecurityGroupName": {
-            "value": "rfzswfsr-nsg"
+            "value": "testing-vm-123-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -82,7 +82,7 @@
             ]
         },
         "publicIpAddressName1": {
-            "value": "rfzswfsr-ip"
+            "value": "testing-vm-123-ip"
         },
         "publicIpAddressType": {
             "value": "Static"
@@ -94,13 +94,13 @@
             "value": "Detach"
         },
         "virtualMachineName": {
-            "value": "rfzswfsr"
+            "value": "testing-vm-123"
         },
         "virtualMachineName1": {
-            "value": "rfzswfsr"
+            "value": "testing-vm-123"
         },
         "virtualMachineComputerName1": {
-            "value": "rfzswfsr"
+            "value": "testing-vm-123"
         },
         "virtualMachineRG": {
             "value": "action-rg"
@@ -128,21 +128,6 @@
         },
         "virtualMachine1Zone": {
             "value": "1"
-        },
-        "autoShutdownStatus": {
-            "value": "Enabled"
-        },
-        "autoShutdownTime": {
-            "value": "19:00"
-        },
-        "autoShutdownTimeZone": {
-            "value": "UTC"
-        },
-        "autoShutdownNotificationStatus": {
-            "value": "Disabled"
-        },
-        "autoShutdownNotificationLocale": {
-            "value": "en"
         }
     }
 }
