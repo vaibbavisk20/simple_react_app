@@ -31,8 +31,8 @@ jobs:
           resource-group-name: ${{ secrets.AZURE_RG }}
           admin-username: ${{ secrets.ADMIN_USERNAME }}
           admin-password: ${{ secrets.ADMIN_PASSWORD }}
-          template: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep
-          parameters: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
+          template: ./main.bicep
+          parameters: ./main.parameters.json
             
 
 
