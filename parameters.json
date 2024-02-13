@@ -6,10 +6,10 @@
             "value": "westus2"
         },
         "networkInterfaceName1": {
-            "value": "final-deploy-vm-k503_z1"
+            "value": "rfzswfsr371_z1"
         },
         "networkSecurityGroupName": {
-            "value": "final-deploy-vm-k-nsg"
+            "value": "rfzswfsr-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -63,11 +63,26 @@
         "subnetName": {
             "value": "default"
         },
-        "virtualNetworkId": {
-            "value": "/subscriptions/9992ee4c-bf90-4d14-9ebe-08efa6dce299/resourceGroups/action-rg/providers/Microsoft.Network/virtualNetworks/testing-vm-github-vnet"
+        "virtualNetworkName": {
+            "value": "testing-vnet"
+        },
+        "addressPrefixes": {
+            "value": [
+                "10.1.0.0/16"
+            ]
+        },
+        "subnets": {
+            "value": [
+                {
+                    "name": "default",
+                    "properties": {
+                        "addressPrefix": "10.1.0.0/24"
+                    }
+                }
+            ]
         },
         "publicIpAddressName1": {
-            "value": "final-deploy-vm-k-ip"
+            "value": "rfzswfsr-ip"
         },
         "publicIpAddressType": {
             "value": "Static"
@@ -79,13 +94,13 @@
             "value": "Detach"
         },
         "virtualMachineName": {
-            "value": "final-deploy-vm-k"
+            "value": "rfzswfsr"
         },
         "virtualMachineName1": {
-            "value": "final-deploy-vm-k"
+            "value": "rfzswfsr"
         },
         "virtualMachineComputerName1": {
-            "value": "final-deploy-vm-k"
+            "value": "rfzswfsr"
         },
         "virtualMachineRG": {
             "value": "action-rg"
@@ -106,7 +121,7 @@
             "value": false
         },
         "adminUsername": {
-            "value": "adminUser"
+            "value": "vaibbavisk"
         },
         "adminPassword": {
             "value": null
