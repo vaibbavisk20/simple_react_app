@@ -46,7 +46,7 @@ runs:
     - name: 'Accept Bitnami marketplace terms'
       shell: bash
       run: |
-        az vm image accept-terms --urn bitnami:lampstack:5-6:latest
+        az vm image terms accept --urn bitnami:lampstack:5-6:latest
         
     - name: 'Az deploy - LAMP on VM Bitnami'
       uses: azure/arm-deploy@v1
