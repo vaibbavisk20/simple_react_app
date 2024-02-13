@@ -31,4 +31,6 @@ jobs:
           resource-group-name: ${{ secrets.AZURE_RG }}
           admin-username: ${{ secrets.ADMIN_USERNAME }}
           admin-password: ${{ secrets.ADMIN_PASSWORD }}
+          template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
+          parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
 

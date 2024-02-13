@@ -22,6 +22,12 @@ inputs:
   admin-password:
     description: 'Admin password to login to vm'
     required: true
+  parameters:
+    description: 'Parameters file to be used in deployment'
+    required: false
+  template:
+    description: 'Template file to be used in deployment'
+    required: false
 #runs:
   # using: 'node20'
   # main: 'dist/index.js'
@@ -53,8 +59,8 @@ runs:
       with:
         subscriptionId: ${{ inputs.subscription-id }}
         resourceGroupName: ${{ inputs.resource-group-name }}
-        template: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/template.json
-        parameters: https://raw.githubusercontent.com/vaibbavisk20/simple_react_app/main/parameters.json
+        template: ${{ inputs.template }}
+        parameters: ${{ inputs.parameters }}
                     adminUsername=${{ inputs.admin-username }}
                     adminPassword=${{ inputs.admin-password }}
         failOnStdErr: false
