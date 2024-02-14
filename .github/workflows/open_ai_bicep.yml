@@ -22,34 +22,34 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: az cli login
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          enable-AzPSSession: false
-          
-      - name: 'Testing'
-        uses: azure/arm-deploy@v1
-        with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: ${{ secrets.AZURE_RG }}
-          template: ./test.bicep
-          # parameters: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
-          failOnStdErr: false
-      # - name: Deploy word press to azure app service
-      #   uses: ./ # Uses an action in the root directory
-      #   id: deploy
+      # - name: az cli login
+      #   uses: azure/login@v1
       #   with:
       #     client-id: ${{ secrets.AZURE_CLIENT_ID }}
       #     tenant-id: ${{ secrets.AZURE_TENANT_ID }}
       #     subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      #     resource-group-name: ${{ secrets.AZURE_RG }}
-      #     admin-username: ${{ secrets.ADMIN_USERNAME }}
-      #     admin-password: ${{ secrets.ADMIN_PASSWORD }}
-      #     template: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep
-      #     parameters: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
+      #     enable-AzPSSession: false
+          
+      # - name: 'Testing'
+      #   uses: azure/arm-deploy@v1
+      #   with:
+      #     subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      #     resourceGroupName: ${{ secrets.AZURE_RG }}
+      #     template: ./test.bicep
+      #     # parameters: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
+      #     failOnStdErr: false
+      - name: Deploy Open AI demo
+        uses: ./ # Uses an action in the root directory
+        id: deploy
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          resource-group-name: ${{ secrets.AZURE_RG }}
+          admin-username: ${{ secrets.ADMIN_USERNAME }}
+          admin-password: ${{ secrets.ADMIN_PASSWORD }}
+          template: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep
+          parameters: https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
             
 
 
