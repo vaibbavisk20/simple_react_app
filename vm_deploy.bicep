@@ -1,5 +1,8 @@
 param adminUsername string
-param adminPassword securestring
+
+@secure()
+param secureAdminPassword string
+
 param vmName string
 param location string = 'East US'
 
