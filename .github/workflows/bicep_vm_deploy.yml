@@ -38,7 +38,7 @@ jobs:
           --name MyDeployment \
           --resource-group MyResourceGroup \
           --template-file vm_deploy.bicep \
-          --parameters adminUsername=vaibbavisk adminPassword=Testing1234 vmName=newVmVsk
+          --parameters adminUsername=vaibbavisk secureAdminPassword=Testing1234 vmName=newVmVsk
 
     - name: Show Outputs
       run: |
