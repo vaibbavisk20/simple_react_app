@@ -37,7 +37,7 @@ jobs:
         az deployment group create \
           --name MyDeployment \
           --resource-group MyResourceGroup \
-          --template-file azuredeploy.bicep \
+          --template-file vm_deploy.bicep \
           --parameters adminUsername=adminUser adminPassword=adminPassword vmName=myVMName
 
     - name: Show Outputs
