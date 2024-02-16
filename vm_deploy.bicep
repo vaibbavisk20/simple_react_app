@@ -27,7 +27,7 @@ resource myVM 'Microsoft.Compute/virtualMachines@2022-03-01' = {
     osProfile: {
       computerName: vmName
       adminUsername: adminUsername
-      adminPassword: adminPassword
+      adminPassword: secureAdminPassword
     }
     networkProfile: {
       networkInterfaces: [
