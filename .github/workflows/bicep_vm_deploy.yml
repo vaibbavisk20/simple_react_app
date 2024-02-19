@@ -40,7 +40,7 @@ jobs:
           --name MyDeployment \
           --resource-group ${{ secrets.AZURE_RG }} \
           --template-file vm_deploy.bicep \
-          --parameters adminUsername=vaibbavisk
+          --parameters adminUsername=vaibbavisk adminPasswordOrKey=Testing12345
 
     # - name: Show Outputs
     #   run: |
