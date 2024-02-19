@@ -30,7 +30,7 @@ jobs:
       run: |
         az deployment group create \
           --name MyDeployment \
-          --resource-group MyResourceGroup \
+          --resource-group ${{ secrets.AZURE_RG }} \
           --template-file storage_deploy.bicep \
           # --parameters adminUsername=vaibbavisk secureAdminPassword=Testing1234 vmName=newVmVsk
 
