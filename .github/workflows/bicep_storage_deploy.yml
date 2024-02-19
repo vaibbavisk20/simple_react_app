@@ -30,7 +30,7 @@ jobs:
       id: generator
       with:
         separator: ''
-        length: '12'
+        length: '4'
         style: 'lowerCase'
 
     - name: test generator output
