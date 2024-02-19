@@ -26,14 +26,6 @@ jobs:
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: false
 
-    # storage account deploy
-    # - name: Deploy Bicep Template
-    #   run: |
-    #     az deployment group create \
-    #       --name MyDeployment \
-    #       --resource-group ${{ secrets.AZURE_RG }} \
-    #       --template-file storage_deploy.bicep \
-
     - name: Deploy Bicep Template
       run: |
         az deployment group create \
@@ -42,9 +34,9 @@ jobs:
           --template-file vm_deploy.bicep \
           --parameters adminUsername=vaibbavisk adminPasswordOrKey=Testing12345
 
-    # - name: Show Outputs
-    #   run: |
-    #     az deployment group show \
-    #       --name MyDeployment \
-    #       --resource-group MyResourceGroup \
-    #       --query properties.outputs
+    - name: Show Outputs
+      run: |
+        az deployment group show \
+          --name MyDeployment \
+          --resource-group MyResourceGroup \
+          --query properties.outputs
