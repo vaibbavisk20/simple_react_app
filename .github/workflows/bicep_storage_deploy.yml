@@ -25,10 +25,21 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: false
+    - name: name generator
+      uses: TGPSKI/name-generator-node-action@v2
+      id: generator
+      with:
+        separator: ''
+        length: '12'
+        style: 'lowerCase'
 
+    - name: test generator output
+      run: echo "latest,${{ steps.generator.outputs.name }}"
+    
     - name: Deploy Bicep Template
       run: |
         az deployment group create \
           --name MyDeployment \
           --resource-group ${{ secrets.AZURE_RG }} \
           --template-file storage_deploy.bicep \
+          --parameters storageAccountName=${{ steps.generator.outputs.name }}
