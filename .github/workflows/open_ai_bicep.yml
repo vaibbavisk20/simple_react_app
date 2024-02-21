@@ -42,7 +42,7 @@ jobs:
           --resource-group ${{ secrets.AZURE_RG }} \
           # --template-string "$(cat bicep_template.json)" \
           --template-uri https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep
-          --parameters https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
-          # --parameters "$(cat bicep_parameters.json)"
+          # --parameters https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
+          --parameters "$(cat bicep_parameters.json)"
           # --scope subscription
     
