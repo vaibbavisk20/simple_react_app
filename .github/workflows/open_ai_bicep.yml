@@ -25,27 +25,26 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: false
-
-    - name: Fetch JSON file from remote repository
-      shell: bash
+        
+    - name: Fetch Bicep Template File
       run: |
-        json_url="https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep"
-        curl -sSLO $json_url
+        json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep)
+        echo "$json_content" > bicep_template.json
 
-    # - name: Print parameter value
-    #   shell: bash
-    #   run: |
-    #     json_file="main.bicep"
-    #     # vm name
-    #     # virtual_machine_name=".parameters.virtualMachineName.value"
-    #     result=$(jq -r "$virtual_machine_name" "$json_file")
-    #     echo "Virtual Machine Properties"
-    #     echo "Name: $result"
-    
-    - name: Deploy Bicep Template
+    - name: Fetch Bicep Parameters File
+      run: |
+        json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json)
+        echo "$json_content" > bicep_parameters.json
+        
+    - name: Set up Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy Bicep template
       run: |
         az deployment group create \
-          --name MyDeployment \
-          --resource-group ${{ secrets.AZURE_RG }} \
-          --template-file "https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep"
-          --parameters https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
+          --resource-group YourResourceGroup \
+          --template-string "$(cat bicep_template.json)" \
+          --parameters "$(cat bicep_parameters.json)"
+    
