@@ -47,5 +47,5 @@ jobs:
         az deployment group create \
           --name MyDeployment \
           --resource-group ${{ secrets.AZURE_RG }} \
-          --template-file https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep
+          --template-file "https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep"
           --parameters https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
