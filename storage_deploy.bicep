@@ -1,5 +1,5 @@
 @description('Name for the Storage Account.')
-param storageAccountName string
+param storageAccountName = "jdsfhz74747"
 
 param location string = 'westus2'
 
