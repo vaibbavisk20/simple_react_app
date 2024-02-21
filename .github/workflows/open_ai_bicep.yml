@@ -39,7 +39,7 @@ jobs:
     - name: Deploy Bicep template
       run: |
         az deployment group create \
-          --resource-group YourResourceGroup \
+          --resource-group ${{ secrets.AZURE_RG }} \
           --template-string "$(cat bicep_template.json)" \
           --parameters "$(cat bicep_parameters.json)"
     
