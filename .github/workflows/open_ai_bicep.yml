@@ -42,4 +42,5 @@ jobs:
           --resource-group ${{ secrets.AZURE_RG }} \
           --template-string "$(cat bicep_template.json)" \
           --parameters "$(cat bicep_parameters.json)"
+          --scope subscription
     
