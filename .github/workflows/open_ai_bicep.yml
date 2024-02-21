@@ -36,11 +36,6 @@ jobs:
         json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json)
         echo "$json_content" > bicep_parameters.json
         
-    - name: Set up Azure CLI
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-
     - name: Deploy Bicep template
       run: |
         az deployment group create \
