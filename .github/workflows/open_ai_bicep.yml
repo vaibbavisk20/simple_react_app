@@ -29,12 +29,12 @@ jobs:
     - name: Fetch Bicep Template File
       run: |
         json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep)
-        echo "$json_content" > bicep_template.json
+        echo "$json_content" > bicep_template.json >/dev/null 2>&1
 
     - name: Fetch Bicep Parameters File
       run: |
         json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json)
-        echo "$json_content" > bicep_parameters.json
+        echo "$json_content" > bicep_parameters.json >/dev/null 2>&1
         
     - name: Deploy Bicep template
       run: |
