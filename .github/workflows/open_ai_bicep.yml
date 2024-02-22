@@ -40,9 +40,7 @@ jobs:
       run: |
         az deployment group create \
           --resource-group ${{ secrets.AZURE_RG }} \
-          # --template-string "$(cat bicep_template.json)" \
           --template-uri https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep
-          # --parameters https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
-          --parameters ./main.parameters.json
-          # --scope subscription
+          --parameters ./main.parameters.json 
+          --parameters environmentName="testingenv" location="eastus"
     
