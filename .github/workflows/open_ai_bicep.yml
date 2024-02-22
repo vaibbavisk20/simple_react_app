@@ -26,15 +26,15 @@ jobs:
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: false
         
-    - name: Fetch Bicep Template File
-      run: |
-        json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep)
-        echo "$json_content" > bicep_template.json >/dev/null 2>&1
+    # - name: Fetch Bicep Template File
+    #   run: |
+    #     json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep)
+    #     echo "$json_content" > bicep_template.json >/dev/null 2>&1
 
-    - name: Fetch Bicep Parameters File
-      run: |
-        json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json)
-        echo "$json_content" > bicep_parameters.json >/dev/null 2>&1
+    # - name: Fetch Bicep Parameters File
+    #   run: |
+    #     json_content=$(curl -sL https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json)
+    #     echo "$json_content" > bicep_parameters.json >/dev/null 2>&1
         
     - name: Deploy Bicep template
       run: |
@@ -43,6 +43,6 @@ jobs:
           # --template-string "$(cat bicep_template.json)" \
           --template-uri https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.bicep
           # --parameters https://raw.githubusercontent.com/Azure-Samples/azure-search-openai-demo/main/infra/main.parameters.json
-          --parameters "$(cat bicep_parameters.json)"
+          --parameters ./main.parameters.json
           # --scope subscription
     
