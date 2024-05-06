@@ -23,7 +23,7 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
     publicNetworkAccess: 'Enabled'
     administrators: {
       administratorType: 'ActiveDirectory'
-      login: 'vsk-newapp-56'
+      login: 'anyname'
       sid: principal_id
       tenantId: tenant_id
       principalType: 'Application'
