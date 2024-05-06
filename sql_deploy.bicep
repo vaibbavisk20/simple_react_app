@@ -7,7 +7,7 @@ param sqlAdminPassword string = newGuid()
 param sqlDatabaseName string = 'vskSqlDatabase1'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
-param location string = 'westus2'
+param location string = 'eastus'
 param tags object = {}
 
 resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
@@ -43,5 +43,4 @@ resource sqlAllowAllWindowsAzureIps 'Microsoft.Sql/servers/firewallRules@2022-05
 }
 
 output sqlServerName string = sqlServer.name
-output sqlServerFqdn string = '${sqlServerName}.database.windows.net'
 output databaseName string = sqlDatabase.name
