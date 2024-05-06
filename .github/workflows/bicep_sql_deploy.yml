@@ -24,10 +24,16 @@ jobs:
         subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: false
     
-    - name: Deploy Bicep Template
-      run: |
-        az deployment group create \
-          --name MyDeployment \
-          --resource-group ${{ vars.AZURE_RG }} \
-          --template-file sql_deploy.bicep \
-          --parameters principal_id=${{ secrets.AZURE_APP_ID }} tenant_id=${{ secrets.AZURE_TENANT_ID }}
+    - name: Az powershell
+      uses: azure/powershell@v2
+      with:
+        inlineScript: |
+          Get-AzureADApplication -Filter "AppId eq ${{ secrets.AZURE_APP_ID }}"
+        azPSVersion: "latest"
+    # - name: Deploy Bicep Template
+    #   run: |
+    #     az deployment group create \
+    #       --name MyDeployment \
+    #       --resource-group ${{ vars.AZURE_RG }} \
+    #       --template-file sql_deploy.bicep \
+    #       --parameters principal_id=${{ secrets.AZURE_APP_ID }} tenant_id=${{ secrets.AZURE_TENANT_ID }}
