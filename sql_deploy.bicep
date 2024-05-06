@@ -1,10 +1,10 @@
-param sqlServerName string = 'vskSqlServer3'
+param sqlServerName string = 'vskSqlServer4'
 param sqlAdminLogin string = 'azureuser'
 
 @secure()
 param sqlAdminPassword string = newGuid()
 
-param sqlDatabaseName string = 'vskSqlDatabase3'
+param sqlDatabaseName string = 'vskSqlDatabase4'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'eastus'
