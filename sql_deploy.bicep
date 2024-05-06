@@ -31,9 +31,10 @@ resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01-preview' = {
   parent: sqlServer
   properties: {
     administratorType: 'ActiveDirectory'
-    login: sqlAdminLogin
+    login: 'vsk-newapp-56'
     sid: principal_id
     tenantId: tenant_id
+    principalType: 'Application'
   }
 }
 
