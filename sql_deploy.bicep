@@ -37,13 +37,13 @@ resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01-preview' = {
   }
 }
 
-resource sqlAadAuth 'Microsoft.Sql/servers/azureADOnlyAuthentications@2022-08-01-preview' = {
-  name: 'Default'
-  parent: sqlServer
-  properties: {
-    azureADOnlyAuthentication: true
-  }
-}
+// resource sqlAadAuth 'Microsoft.Sql/servers/azureADOnlyAuthentications@2022-08-01-preview' = {
+//   name: 'Default'
+//   parent: sqlServer
+//   properties: {
+//     azureADOnlyAuthentication: true
+//   }
+// }
 
 resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-08-01-preview' = {
   parent: sqlServer
