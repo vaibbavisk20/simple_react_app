@@ -1,4 +1,4 @@
-name: Deploy Azure VM
+name: Deploy Azure Storage Account
 
 on:
   push:
@@ -25,18 +25,11 @@ jobs:
         tenant-id: ${{ secrets.AZURE_TENANT_ID }}
         subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: false
-
+    
     - name: Deploy Bicep Template
       run: |
         az deployment group create \
           --name MyDeployment \
           --resource-group ${{ secrets.AZURE_RG }} \
-          --template-file vm_deploy.bicep \
-          --parameters adminUsername=vaibbavisk adminPasswordOrKey=Testing12345
-
-    - name: Show Outputs
-      run: |
-        az deployment group show \
-          --name MyDeployment \
-          --resource-group MyResourceGroup \
-          --query properties.outputs
+          --template-file sql_deploy.bicep \
+          # --parameters storageAccountName=${{ steps.generator.outputs.name }}
