@@ -10,12 +10,6 @@ param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'westus2'
 param tags object = {}
 
-@description('Key Vault ID')
-param keyVaultName string = ''
-
-@description('Key Vault ID')
-param addKeysToVault bool = false
-
 resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
   name: sqlServerName
   location: location
@@ -36,21 +30,6 @@ resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-08-01-preview' = {
   properties: {
     collation: databaseCollation
     maxSizeBytes: databaseMaxSizeBytes
-  }
-}
-
-module sqlConnectionStringSecret '../keyvault/keyvault-secret.bicep' = if(addKeysToVault) {
-  name: 'sql-secret-connection-string'
-  params: {
-    keyVaultName: keyVaultName
-    secretName: 'SQL-CONNECTION-STRING'
-    secretValue: concat('Driver={ODBC Driver 18 for SQL Server};',
-     'Server=tcp:',
-     sqlServer.properties.fullyQualifiedDomainName, 
-     ',1433;Database=', sqlDatabaseName, 
-     ';UiD=', sqlAdminLogin, 
-     ';Pwd=', sqlAdminPassword, 
-     ';Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
   }
 }
 
