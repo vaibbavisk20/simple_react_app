@@ -33,6 +33,7 @@ jobs:
     #     azPSVersion: "latest"
     - name: Deploy Bicep Template
       run: |
+        echo ${{ secrets.AZURE_APP_NAME }}
         az deployment group create \
           --name MyDeployment \
           --resource-group ${{ vars.AZURE_RG }} \
