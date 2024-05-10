@@ -37,4 +37,4 @@ jobs:
           --name MyDeployment \
           --resource-group ${{ vars.AZURE_RG }} \
           --template-file sql_deploy.bicep \
-          --parameters principal_id=${{ secrets.AZURE_APP_ID }} tenant_id=${{ secrets.AZURE_TENANT_ID }}
+          --parameters principal_id=${{ secrets.AZURE_APP_ID }} tenant_id=${{ secrets.AZURE_TENANT_ID }} principal_name=${{ secrets.AZURE_APP_NAME }}
