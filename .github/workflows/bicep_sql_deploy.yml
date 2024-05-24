@@ -37,8 +37,8 @@ jobs:
     - name: Connect to server
       run: |
         az sql db show-connection-string \
-          --server vskSqlServer5 \
-          --name vskSqlDatabase5 \
+          --server vskSqlServer6 \
+          --name vskSqlDatabase6 \
           --client odbc \
           --auth-type ADIntegrated \
           --subscription ${{ vars.AZURE_SUBSCRIPTION_ID }} \

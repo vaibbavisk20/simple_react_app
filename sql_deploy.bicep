@@ -1,10 +1,5 @@
-param sqlServerName string = 'vskSqlServer5'
-param sqlAdminLogin string = 'azureuser'
-
-@secure()
-param sqlAdminPassword string = newGuid()
-
-param sqlDatabaseName string = 'vskSqlDatabase5'
+param sqlServerName string = 'vskSqlServer6'
+param sqlDatabaseName string = 'vskSqlDatabase6'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'eastus'
