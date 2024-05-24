@@ -25,13 +25,6 @@ jobs:
         subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: true
     
-    # - name: Az powershell
-    #   uses: azure/powershell@v2
-    #   with:
-    #     inlineScript: |
-    #       Install-Module AzureAD
-    #       Get-AzureADApplication -Filter "AppId eq ${{ secrets.AZURE_APP_ID }}"
-    #     azPSVersion: "latest"
     - name: Deploy Bicep Template
       run: |
         echo ${{ secrets.AZURE_APP_NAME }}
@@ -40,3 +33,13 @@ jobs:
           --resource-group ${{ vars.AZURE_RG }} \
           --template-file sql_deploy.bicep \
           --parameters principal_id=${{ secrets.AZURE_APP_ID }} tenant_id=${{ secrets.AZURE_TENANT_ID }} principal_name=${{ secrets.AZURE_APP_NAME }}
+    
+    - name: Connect to server
+      run: |
+        az sql db show-connection-string \
+          --client odbc \
+          --name vskSqlDatabase5 \
+          --server vskSqlServer5 \
+          --subscription ${{ vars.AZURE_SUBSCRIPTION_ID }} \
+          --auth-type ActiveDirectoryIntegrated \
+          --output table
