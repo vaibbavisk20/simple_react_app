@@ -22,17 +22,14 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
     version: '12.0'
     minimalTlsVersion: '1.2'
     publicNetworkAccess: 'Enabled'
-  }
-}
-
-resource sqlAADLogin 'Microsoft.Sql/servers/administrators@2022-08-01-preview' = {
-  name: 'ActiveDirectory'
-  parent: sqlServer
-  properties: {
-    administratorType: 'ActiveDirectory'
-    login: principal_name
-    sid: principal_id
-    tenantId: tenant_id
+    administrators: {
+      administratorType: 'ActiveDirectory'
+      azureADOnlyAuthentication: true
+      login: principal_name
+      principalType: 'Application'
+      sid: principal_id
+      tenantId: tenant_id
+    }
   }
 }
 
