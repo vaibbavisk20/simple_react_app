@@ -25,21 +25,21 @@ jobs:
         subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: true
     
-    - name: Deploy Bicep Template
-      run: |
-        echo ${{ secrets.AZURE_APP_NAME }}
-        az deployment group create \
-          --name MyDeployment \
-          --resource-group ${{ vars.AZURE_RG }} \
-          --template-file sql_deploy.bicep \
-          --parameters principal_id=${{ secrets.AZURE_APP_ID }} tenant_id=${{ secrets.AZURE_TENANT_ID }} principal_name=${{ secrets.AZURE_APP_NAME }}
+    # - name: Deploy Bicep Template
+    #   run: |
+    #     echo ${{ secrets.AZURE_APP_NAME }}
+    #     az deployment group create \
+    #       --name MyDeployment \
+    #       --resource-group ${{ vars.AZURE_RG }} \
+    #       --template-file sql_deploy.bicep \
+    #       --parameters principal_id=${{ secrets.AZURE_APP_ID }} tenant_id=${{ secrets.AZURE_TENANT_ID }} principal_name=${{ secrets.AZURE_APP_NAME }}
     
     - name: Connect to server
       run: |
         az sql db show-connection-string \
-          --client odbc \
-          --name vskSqlDatabase5 \
           --server vskSqlServer5 \
+          --name vskSqlDatabase5 \
+          --client odbc \
+          --auth-type ADIntegrated \
           --subscription ${{ vars.AZURE_SUBSCRIPTION_ID }} \
-          --auth-type ActiveDirectoryIntegrated \
           --output table
