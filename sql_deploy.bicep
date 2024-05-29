@@ -29,6 +29,17 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
   }
 }
 
+resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01' = {
+  name: 'sqlAdmin'
+  parent: sqlServer
+  properties: {
+      login: principal_name
+      principalType: 'Application'
+      sid: principal_id
+      tenantId: tenant_id
+  }
+}
+
 resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-08-01-preview' = {
   parent: sqlServer
   name: sqlDatabaseName
