@@ -33,10 +33,10 @@ resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01-preview' = {
   name: 'sqlAdmin'
   parent: sqlServer
   properties: {
-      login: principal_name
-      administratorType: 'ActiveDirectory'
-      sid: principal_id
-      tenantId: tenant_id
+    administratorType: 'ActiveDirectory'
+    login: principal_name
+    sid: principal_id
+    tenantId: tenant_id
   }
 }
 
