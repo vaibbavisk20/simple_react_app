@@ -1,10 +1,10 @@
-param sqlServerName string = 'sqlserver9'
+param sqlServerName string = 'sqlserver10'
 param sqlAdminLogin string = 'azureuser'
 
 @secure()
 param sqlAdminPassword string = newGuid()
 
-param sqlDatabaseName string = 'sqldatabase9'
+param sqlDatabaseName string = 'sqldatabase10'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'eastus'
