@@ -1,10 +1,10 @@
-param sqlServerName string = 'sqlserver11'
+param sqlServerName string = 'vskSqlServer7'
 param sqlAdminLogin string = 'azureuser'
 
 @secure()
 param sqlAdminPassword string = newGuid()
 
-param sqlDatabaseName string = 'sqldatabase11'
+param sqlDatabaseName string = 'vskSqlDatabase7'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'eastus'
@@ -14,22 +14,22 @@ param principal_name string
 param principal_id string
 param tenant_id string
 
-@description('Key Vault ID')
-param keyVaultName string = ''
-
-@description('Key Vault ID')
-param addKeysToVault bool = false
-
 resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
   name: sqlServerName
   location: location
   tags: tags
   properties: {
-    administratorLogin: sqlAdminLogin
-    administratorLoginPassword: sqlAdminPassword
     version: '12.0'
     minimalTlsVersion: '1.2'
     publicNetworkAccess: 'Enabled'
+    administrators: {
+      administratorType: 'ActiveDirectory'
+      azureADOnlyAuthentication: true
+      login: principal_name
+      principalType: 'Application'
+      sid: principal_id
+      tenantId: tenant_id
+    }
   }
 }
 
