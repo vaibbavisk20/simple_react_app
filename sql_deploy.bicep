@@ -38,6 +38,7 @@ resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01-preview' = {
     sid: principal_id
     tenantId: tenant_id
   }
+  dependsOn: [sqlServer]
 }
 
 resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-08-01-preview' = {
