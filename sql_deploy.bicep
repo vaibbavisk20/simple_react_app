@@ -9,6 +9,11 @@ param principal_name string
 param principal_id string
 param tenant_id string
 
+param sqlAdminLogin string = 'azureuser'
+
+@secure()
+param sqlAdminPassword string = newGuid()
+
 resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
   name: sqlServerName
   location: location
@@ -17,7 +22,8 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
     version: '12.0'
     minimalTlsVersion: '1.2'
     publicNetworkAccess: 'Enabled'
-    administratorLogin: 'vaibbavis'
+    administratorLogin: sqlAdminLogin
+    administratorLoginPassword: sqlAdminPassword   
     administrators: {
       administratorType: 'ActiveDirectory'
       azureADOnlyAuthentication: true
