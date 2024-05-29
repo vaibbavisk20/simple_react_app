@@ -10,6 +10,10 @@ param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string
 param tags object = {}
 
+param principal_name string
+param principal_id string
+param tenant_id string
+
 @description('Key Vault ID')
 param keyVaultName string = ''
 
