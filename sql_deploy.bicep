@@ -17,7 +17,7 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
     version: '12.0'
     minimalTlsVersion: '1.2'
     publicNetworkAccess: 'Enabled'
-    administratorLogin: 'sqladmin'
+    administratorLogin: 'vaibbavis'
     administrators: {
       administratorType: 'ActiveDirectory'
       azureADOnlyAuthentication: true
