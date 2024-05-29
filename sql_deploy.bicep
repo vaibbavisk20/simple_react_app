@@ -7,7 +7,7 @@ param sqlAdminPassword string = newGuid()
 param sqlDatabaseName string = 'sqldatabase1'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
-param location string
+param location string = 'eastus'
 param tags object = {}
 
 param principal_name string
