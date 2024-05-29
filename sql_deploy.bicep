@@ -29,12 +29,12 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
   }
 }
 
-resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01' = {
+resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01-preview' = {
   name: 'sqlAdmin'
   parent: sqlServer
   properties: {
       login: principal_name
-      principalType: 'Application'
+      administratorType: 'ActiveDirectory'
       sid: principal_id
       tenantId: tenant_id
   }
