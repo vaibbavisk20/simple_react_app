@@ -25,15 +25,6 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
     administratorLogin: sqlAdminLogin
     administratorLoginPassword: sqlAdminPassword   
   }
-    resource entraIdAdmin 'administrators@2022-08-01-preview' = {
-      name: 'Default'
-      properties: {
-        administratorType: 'ActiveDirectory'
-        login: principal_name
-        sid: principal_id
-        tenantId: tenant_id  
-    }
-  }
 }
 
 resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-08-01-preview' = {
