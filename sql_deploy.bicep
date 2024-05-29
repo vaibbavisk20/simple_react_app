@@ -1,29 +1,31 @@
-param sqlServerName string = 'vskSqlServer6'
-param sqlDatabaseName string = 'vskSqlDatabase6'
-param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
-param databaseMaxSizeBytes int = 34359738368 // 32 GB
-param location string = 'eastus'
-param tags object = {}
-
-param principal_name string
-param principal_id string
-param tenant_id string
-
+param sqlServerName string
 param sqlAdminLogin string = 'azureuser'
 
 @secure()
 param sqlAdminPassword string = newGuid()
+
+param sqlDatabaseName string
+param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
+param databaseMaxSizeBytes int = 34359738368 // 32 GB
+param location string
+param tags object = {}
+
+@description('Key Vault ID')
+param keyVaultName string = ''
+
+@description('Key Vault ID')
+param addKeysToVault bool = false
 
 resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
   name: sqlServerName
   location: location
   tags: tags
   properties: {
+    administratorLogin: sqlAdminLogin
+    administratorLoginPassword: sqlAdminPassword
     version: '12.0'
     minimalTlsVersion: '1.2'
     publicNetworkAccess: 'Enabled'
-    administratorLogin: sqlAdminLogin
-    administratorLoginPassword: sqlAdminPassword   
   }
 }
 
@@ -47,4 +49,5 @@ resource sqlAllowAllWindowsAzureIps 'Microsoft.Sql/servers/firewallRules@2022-05
 }
 
 output sqlServerName string = sqlServer.name
+output sqlServerFqdn string = '${sqlServerName}.database.windows.net'
 output databaseName string = sqlDatabase.name
