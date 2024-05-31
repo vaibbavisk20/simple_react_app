@@ -22,7 +22,7 @@ Write-Host ""
 $populatesqlArguments = "populate_sql.py",
   "--sqlconnectionstring", "`"Driver={ODBC Driver 18 for SQL Server};Server=tcp:vskSqlServer15.database.windows.net,1433;Database=vskSqlDatabase15;UiD=b4cd9374-b9fc-4635-9560-e56f565c4903;Encrypt=yes;Connection Timeout=30;Authentication=ActiveDirectoryIntegrated`"",
   "--subscriptionid", "443b0799-279f-401e-a220-aa1463a7710f",
-  "--resourcegroup", "rg-vsk-test-530",
+  "--resourcegroup", "vsk-demo-repo-rg",
   "--servername", "vskSqlServer15",
   "-v"
 
