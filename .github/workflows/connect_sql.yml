@@ -28,6 +28,8 @@ jobs:
     - name: Run Azure PowerShell Script File
       uses: azure/powershell@v2
       with:
-        inlineScript: ./prepdata.ps1
+        inlineScript: |
+            azd auth login --client-id ${{ secrets.AZURE_CLIENT_ID }} --federated-credential-provider "github" --tenant-id ${{ secrets.AZURE_TENANT_ID }}
+            ./prepdata.ps1
         azPSVersion: "latest"
     
