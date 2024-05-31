@@ -25,7 +25,9 @@ jobs:
         subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: true
     
-    - name: Connect to SQL server
-      shell: pwsh
-      run: |
-        ./prepdata.ps1
+    - name: Run Azure PowerShell Script File
+      uses: azure/powershell@v2
+      with:
+        inlineScript: ./prepdata.ps1
+        azPSVersion: "latest"
+    
