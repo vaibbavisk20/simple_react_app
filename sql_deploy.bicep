@@ -1,6 +1,6 @@
-param sqlServerName string = 'vskSqlServer12'
+param sqlServerName string = 'vskSqlServer14'
 
-param sqlDatabaseName string = 'vskSqlDatabase12'
+param sqlDatabaseName string = 'vskSqlDatabase14'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'eastus'
@@ -23,22 +23,10 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
       azureADOnlyAuthentication: true
       login: principal_name
       principalType: 'Application'
-      sid: principal_id
+      sid: '3c9874d9-e39f-4217-b866-b2da4960c4e9'
       tenantId: tenant_id
     }
   }
-}
-
-resource sqlAdmin 'Microsoft.Sql/servers/administrators@2022-08-01-preview' = {
-  name: 'sqlAdmin'
-  parent: sqlServer
-  properties: {
-    administratorType: 'ActiveDirectory'
-    login: principal_name
-    sid: principal_id
-    tenantId: tenant_id
-  }
-  dependsOn: [sqlServer]
 }
 
 resource sqlDatabase 'Microsoft.Sql/servers/databases@2022-08-01-preview' = {
