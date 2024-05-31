@@ -20,7 +20,7 @@ Write-Host ""
 Write-Host 'Running "populate_sql.py"...'
 Write-Host ""
 $populatesqlArguments = "populate_sql.py",
-  "--sqlconnectionstring", "`"Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-cydxse7pimuiu.database.windows.net;Database=sqldb-cydxse7pimuiu;UiD=b4cd9374-b9fc-4635-9560-e56f565c4903;Encrypt=yes;Connection Timeout=30;Authentication=ActiveDirectoryIntegrated`"",
+  "--sqlconnectionstring", "`"Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-cydxse7pimuiu.database.windows.net;Database=sqldb-cydxse7pimuiu;UiD=b4cd9374-b9fc-4635-9560-e56f565c4903;Authentication=ActiveDirectoryIntegrated`"",
   "--subscriptionid", "443b0799-279f-401e-a220-aa1463a7710f",
   "--resourcegroup", "rg-vsk-test-530",
   "--servername", "sql-cydxse7pimuiu",
