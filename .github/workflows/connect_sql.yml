@@ -31,14 +31,6 @@ jobs:
     - name: Install ODBC Driver for SQL Server v18
       uses: Yarden-zamir/install-mssql-odbc@v1.0.2
 
-    - name: Azure CLI script
-      uses: azure/cli@v2
-      with:
-        azcliversion: latest
-        inlineScript: |
-          az account show
-          az rest --method GET --uri https://graph.microsoft.com/v1.0/me | from json | get id
-
 
     - name: Run Azure PowerShell Script File
       uses: azure/powershell@v2
@@ -46,5 +38,6 @@ jobs:
         inlineScript: |
             azd auth login --client-id ${{ secrets.AZURE_CLIENT_ID }} --federated-credential-provider "github" --tenant-id ${{ secrets.AZURE_TENANT_ID }}
             ./prepdata.ps1
+            Get-AzContext
         azPSVersion: "latest"
     
