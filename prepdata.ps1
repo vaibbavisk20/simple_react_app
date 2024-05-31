@@ -16,6 +16,9 @@ if (Test-Path -Path "/usr") {
 
 $process = Start-Process -FilePath $venvPythonPath -ArgumentList "-m pip install -r requirements.txt" -Wait -NoNewWindow -PassThru
 
+$principalId = az rest --method GET --uri https://graph.microsoft.com/v1.0/me | from json | get id
+Write-Host "Prinicpal ID: $principalId"
+
 Write-Host ""
 Write-Host 'Running "populate_sql.py"...'
 Write-Host ""
