@@ -20,10 +20,10 @@ Write-Host ""
 Write-Host 'Running "populate_sql.py"...'
 Write-Host ""
 $populatesqlArguments = "populate_sql.py",
-  "--sqlconnectionstring", "`"Driver={ODBC Driver 18 for SQL Server};Server=tcp:vskSqlServer15.database.windows.net,1433;Database=vskSqlDatabase15;UiD=newapp;Encrypt=yes;Connection Timeout=30;Authentication=ActiveDirectoryIntegrated`"",
+  "--sqlconnectionstring", "`"Driver={ODBC Driver 18 for SQL Server};Server=tcp:vskSqlServer16.database.windows.net,1433;Database=vskSqlDatabase16;UiD=6f008e7b-a6c1-4634-9d99-5e65c6493072;Encrypt=yes;Connection Timeout=30;Authentication=ActiveDirectoryIntegrated`"",
   "--subscriptionid", "443b0799-279f-401e-a220-aa1463a7710f",
   "--resourcegroup", "vsk-demo-repo-rg",
-  "--servername", "vskSqlServer15",
+  "--servername", "vskSqlServer16",
   "-v"
 
 $process = Start-Process -FilePath $venvPythonPath -ArgumentList $populatesqlArguments -Wait -NoNewWindow -PassThru
