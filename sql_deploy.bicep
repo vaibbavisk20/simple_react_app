@@ -1,6 +1,6 @@
-param sqlServerName string = 'vskSqlServer15'
+param sqlServerName string = 'vskSqlServer16'
 
-param sqlDatabaseName string = 'vskSqlDatabase15'
+param sqlDatabaseName string = 'vskSqlDatabase16'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'eastus'
@@ -23,7 +23,7 @@ resource sqlServer 'Microsoft.Sql/servers@2022-08-01-preview' = {
       azureADOnlyAuthentication: true
       login: principal_name
       principalType: 'Application'
-      sid: '3c9874d9-e39f-4217-b866-b2da4960c4e9'
+      sid: 'ed8f8222-8e2f-48e6-a193-b34b12b3db8f'
       tenantId: tenant_id
     }
   }
