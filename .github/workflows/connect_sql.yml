@@ -25,6 +25,9 @@ jobs:
         subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
         enable-AzPSSession: true
     
+    - name: 'Install azd'
+      uses: Azure/setup-azd@v0.1.0
+      
     - name: Run Azure PowerShell Script File
       uses: azure/powershell@v2
       with:
