@@ -26,6 +26,8 @@ $populatesqlArguments = "populate_sql.py",
   "--servername", "vskSqlServer-1",
   "-v"
 
+  Write-Warning "sql connection string $populatesqlArguments
+
 $process = Start-Process -FilePath $venvPythonPath -ArgumentList $populatesqlArguments -Wait -NoNewWindow -PassThru
 
 if ($process.ExitCode -ne 0) {
