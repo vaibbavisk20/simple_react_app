@@ -14,6 +14,9 @@ if (Test-Path -Path "/usr") {
   $venvPythonPath = "./scripts/.venv/bin/python"
 }
 
+Install-Module AzureAD -Force
+Get-AzContext
+
 $process = Start-Process -FilePath $venvPythonPath -ArgumentList "-m pip install -r requirements.txt" -Wait -NoNewWindow -PassThru
 
 Write-Host ""
