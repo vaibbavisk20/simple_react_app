@@ -47,6 +47,7 @@ jobs:
           azd env set AZURE_PRINCIPAL_ID ${{ secrets.AZURE_APP_ID }}
           azd env set AZURE_APP_NAME ${{ secrets.AZURE_APP_NAME }}
           azd env set AZURE_DOCUMENTINTELLIGENCE_RESOURCE_GROUP ${{ vars.AZURE_RG }}
+          azd env set AZURE_DOCUMENTINTELLIGENCE_LOCATION ${{ vars.AZURE_LOCATION }}
           azd init -t Azure-Samples/azure-search-openai-demo -e ${{ vars.AZURE_ENV_NAME }} -l ${{ vars.AZURE_LOCATION }} -s ${{ vars.AZURE_SUBSCRIPTION_ID }}
           azd pipeline config --no-prompt
           # azd pipeline config --auth-type federated --environment ${{ vars.AZURE_ENV_NAME }} --provider github
