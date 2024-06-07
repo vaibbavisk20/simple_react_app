@@ -47,7 +47,7 @@ jobs:
           azd env set AZURE_SUBSCRIPTION_ID ${{ vars.AZURE_SUBSCRIPTION_ID }}
           azd env set AZURE_PRINCIPAL_ID ${{ secrets.AZURE_APP_ID }}
           azd env set AZURE_APP_NAME ${{ secrets.AZURE_APP_NAME }}
-          # azd pipeline config
+          azd pipeline config --no-prompt
           # azd pipeline config --auth-type federated --environment ${{ vars.AZURE_ENV_NAME }} --provider github
         azPSVersion: "latest"
     # - name: Deploy Bicep Template
