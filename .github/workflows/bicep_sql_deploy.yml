@@ -49,7 +49,7 @@ jobs:
           azd env set AZURE_APP_NAME ${{ secrets.AZURE_APP_NAME }}
           azd env set AZURE_DOCUMENTINTELLIGENCE_RESOURCE_GROUP ${{ vars.AZURE_RG }}
           azd env set AZURE_DOCUMENTINTELLIGENCE_LOCATION ${{ vars.AZURE_LOCATION }}
-          azd pipeline config --auth-type federated --environment ${{ vars.AZURE_ENV_NAME }} --provider github --no-prompt
+          azd pipeline config --auth-type client-credentials --environment ${{ vars.AZURE_ENV_NAME }} --provider github --no-prompt
         azPSVersion: "latest"
     # - name: Deploy Bicep Template
     #   run: |
