@@ -39,7 +39,7 @@ jobs:
         inlineScript: |
           mkdir azd-repo
           cd azd-repo
-          azd init -t Azure-Samples/azure-search-openai-demo --no-prompt
+          azd init -t Azure-Samples/azure-search-openai-demo --no-prompt -e ${{ vars.AZURE_ENV_NAME }}
           azd env new ${{ vars.AZURE_ENV_NAME }}
           azd env set AZURE_ENV_NAME ${{ vars.AZURE_ENV_NAME }}
           azd env set AZURE_LOCATION  ${{ vars.AZURE_LOCATION }}
