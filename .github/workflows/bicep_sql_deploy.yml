@@ -40,6 +40,7 @@ jobs:
           mkdir azd-repo
           cd azd-repo
           azd auth login --client-id ${{ secrets.AZURE_CLIENT_ID }} --federated-credential-provider "github" --tenant-id ${{ secrets.AZURE_TENANT_ID }}
+          azd init -t Azure-Samples/azure-search-openai-demo -e ${{ vars.AZURE_ENV_NAME }} -l ${{ vars.AZURE_LOCATION }} -s ${{ vars.AZURE_SUBSCRIPTION_ID }}
           azd env set AZURE_ENV_NAME ${{ vars.AZURE_ENV_NAME }}
           azd env set AZURE_LOCATION  ${{ vars.AZURE_LOCATION }}
           azd env set AZURE_OPENAI_LOCATION ${{ vars.AZURE_OPENAI_LOCATION }}
@@ -48,7 +49,6 @@ jobs:
           azd env set AZURE_APP_NAME ${{ secrets.AZURE_APP_NAME }}
           azd env set AZURE_DOCUMENTINTELLIGENCE_RESOURCE_GROUP ${{ vars.AZURE_RG }}
           azd env set AZURE_DOCUMENTINTELLIGENCE_LOCATION ${{ vars.AZURE_LOCATION }}
-          azd init -t Azure-Samples/azure-search-openai-demo -e ${{ vars.AZURE_ENV_NAME }} -l ${{ vars.AZURE_LOCATION }} -s ${{ vars.AZURE_SUBSCRIPTION_ID }}
           azd pipeline config --no-prompt
           # azd pipeline config --auth-type federated --environment ${{ vars.AZURE_ENV_NAME }} --provider github
         azPSVersion: "latest"
