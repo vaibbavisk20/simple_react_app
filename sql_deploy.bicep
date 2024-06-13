@@ -1,6 +1,6 @@
-param sqlServerName string = 'vskSqlServer-63'
+param sqlServerName string = 'vskSqlServer-613'
 
-param sqlDatabaseName string = 'vskSqlDatabase-63'
+param sqlDatabaseName string = 'vskSqlDatabase-613'
 param databaseCollation string = 'SQL_Latin1_General_CP1_CI_AS'
 param databaseMaxSizeBytes int = 34359738368 // 32 GB
 param location string = 'eastus'
