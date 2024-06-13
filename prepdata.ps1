@@ -23,10 +23,10 @@ Write-Host ""
 Write-Host 'Running "populate_sql.py"...'
 Write-Host ""
 $populatesqlArguments = "populate_sql.py",
-  "--sqlconnectionstring", "`"Driver={ODBC Driver 18 for SQL Server};Server=tcp:vskSqlServer-63.database.windows.net,1433;Database=vskSqlDatabase-63;UiD=0cf2cf93-8651-4a37-9416-e36d4c047d4b;Encrypt=yes;Connection Timeout=30;Authentication=ActiveDirectoryIntegrated`"",
+  "--sqlconnectionstring", "`"Driver={ODBC Driver 18 for SQL Server};Server=tcp:vskSqlServer-613.database.windows.net,1433;Database=vskSqlDatabase-613;UiD=c424cd05-1d60-4d83-9ad2-933a63377713;Encrypt=yes;Connection Timeout=30;Authentication=ActiveDirectoryIntegrated`"",
   "--subscriptionid", "443b0799-279f-401e-a220-aa1463a7710f",
-  "--resourcegroup", "rg-vsk-test-530",
-  "--servername", "vskSqlServer-63",
+  "--resourcegroup", "vskgh-rg",
+  "--servername", "vskSqlServer-613",
   "-v"
 
 Write-Warning "sql connection string $populatesqlArguments"
